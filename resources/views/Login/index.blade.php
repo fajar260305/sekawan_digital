@@ -25,6 +25,10 @@
         user-select: none;
       }
 
+      body {
+        background-color: rgb(184, 184, 184);
+      }
+
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
@@ -77,7 +81,7 @@
     
     
     <div class=" d-flex justify-content-center align-items-center" style="align-item: center; height: 100vh;">
-        <div class="card" style="width: 22rem;">
+        <div class="card bg-light" style="width: 22rem;">
           <div class="card-body">
         <main class="form-signin w-100 m-auto">
           @if (session()->has('gagal'))
@@ -99,7 +103,7 @@
               <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="floatingPassword" placeholder="Password">
               <label for="floatingPassword">Password</label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+            <button class="w-100 btn btn-lg btn-secondary" type="submit">Login</button>
           </form>
         </main>
       </div>

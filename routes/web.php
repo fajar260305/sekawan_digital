@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AtasanController;
+use App\Http\Controllers\ExportPesananController;
 use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\HomepageController;
@@ -35,6 +36,9 @@ Route::resource('/dashboard/kendaraan', KendaraanController::class)->middleware(
 
 // Pesanan
 Route::resource('/dashboard/pesanan', PesananController::class)->middleware('auth:web');
+
+// Export Pesanan
+Route::get('/Exel-export', [ExportPesananController::class, 'export']);
 
 // Atasan
 Route::get('/atasan', [AtasanController::class, 'index'])->name('atasan')->middleware('auth:atasan');

@@ -26,6 +26,11 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <a href="/Exel-export" class="btn btn-sm btn-outline-secondary">Export</a>
+          </div>
+        </div>
       </div>
 
       {{-- Tabel Kendaraan --}}
@@ -138,7 +143,7 @@
               <td class="col pt-3">{{ $pesanan->telp }}</td>
               <td class="col pt-3">{{ $pesanan->plat_mobil }}</td>
               <td class="col pt-3">{{ $pesanan->atasan->name }}</td>
-              <td class="col pt-3">{{ $pesanan->izin }}</td>
+              <td class="col pt-3">{{ $pesanan->izin == 0 ? 'Belum di Izinkan' : 'Di Izinkan' }}</td>
               <td class="col">
                 <a href="/dashboard/pesanan/{{ $pesanan->id }}/edit" class="btn btn-outline-primary">
                   <i class="bi bi-pencil-square"></i>
